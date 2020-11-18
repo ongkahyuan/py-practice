@@ -11,7 +11,7 @@
     - User group table:
 
     |  group_id  | user_id  | join_time |
-    |  ----  | ----  | ----  | ----  |
+    |  ----  | ----  | ---- |
     | 1  | 1 | 2020-11-11 06:44:58 |
 
    P.S.: every user could only join one group.
