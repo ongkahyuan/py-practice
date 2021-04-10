@@ -26,7 +26,7 @@
 ```
    
 
-5. Using given data to solve the follow issue:
+5. Using the information in the data directory, solve the following:
    1. List the top 10 sellers with the highest review score.
    2. Calculate the top 10 product categories with the highest sales and show their english name.
    3. Count the daily average revenue by the top 10 sellers with the highest total revenue.
