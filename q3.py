@@ -1,5 +1,3 @@
-import operator
-
 class q3:
 
     def __init__(self):
@@ -15,9 +13,34 @@ class q3:
                 word_dict[word] +=1
             else:
                 word_dict[word] = 1
-        # return sorted(word_dict, key=word_dict.get, reverse=True)[:10]
-        return dict(sorted(word_dict.items(), key=operator.itemgetter(1), reverse=True))
+        return word_dict
+
+    def find_first(self,word):
+        for sent in self.sents:
+            if word in sent:
+                return sent
+
+    def find_last(self,word):
+        for sent in self.sents[::-1]:
+            if word in sent:
+                return sent
+
+    def generate_list(self):
+        word_dict = self.find_freq()
+        out = []
+        for i in range(10):
+            word = sorted(word_dict, key=word_dict.get, reverse=True)[i]
+            freq = word_dict[word]
+            first = self.find_first(word)
+            last = self.find_last(word)
+            compiled = {}
+            compiled["keyword"] = word
+            compiled["frequency"] = freq
+            compiled["first_time"] = first
+            compiled["last_time"] = last
+            out.append(compiled)
+        return out
 
 if __name__ == "__main__":
     s = q3()
-    print(s.find_freq())
+    print(s.generate_list())
